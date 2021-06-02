@@ -1,0 +1,14 @@
+﻿using BazarHardamAPI.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BazarHardamAPI.Services
+{
+    public interface ICampaignService
+    {
+        Task<Campaign> GetCampaign();
+    }
+}
