@@ -53,6 +53,32 @@ namespace BazarHardamAPI.Controllers
         }
         
         //[Authorize]
+        [Route("Api/Inventory/GetAllInventoryGroupBy")]
+        [HttpGet]
+        public async Task<IHttpActionResult> GetAllInventoryGroupBy()
+        {
+            var response = await _service.GetAllInventoryGroupBy();
+            if (response != null)
+            {
+                return Ok(response);
+            }
+            return NotFound();
+        }
+
+        //[Authorize]
+        [Route("Api/Inventory/GetAllInvStores")]
+        [HttpGet]
+        public async Task<IHttpActionResult> GetAllInvStores()
+        {
+            var response = await _service.GetAllInvStores();
+            if (response != null)
+            {
+                return Ok(response);
+            }
+            return NotFound();
+        }
+
+        //[Authorize]
         [Route("Api/Inventory/GetAllProductUnits")]
         [HttpGet]
         public async Task<IHttpActionResult> GetAllProductUnits()

@@ -17,11 +17,12 @@ namespace BazarHardamAPI.Repositories
         public long Id { get; set; }
         public System.DateTime ChallanDate { get; set; }
         public string ChallanRef { get; set; }
+        public long InvStoreId { get; set; }
         public long VendorId { get; set; }
+        public string Remarks { get; set; }
         public long ProductId { get; set; }
-        public int Quantity { get; set; }
+        public decimal Quantity { get; set; }
         public decimal CostUnitPrice { get; set; }
-        public decimal SaleUnitPrice { get; set; }
         public decimal TotalAmount { get; set; }
         public System.Guid CreateUser { get; set; }
         public System.DateTime CreateDate { get; set; }

@@ -200,6 +200,7 @@
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\OrderDetailModel.cs" />
     <Compile Include="Models\ProductDetail.cs" />
+    <Compile Include="Models\ProductWithUnit.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BazarHardam.Context.cs">
@@ -348,6 +349,7 @@
     <Content Include="Repositories\BazarHardam.edmx.diagram">
       <DependentUpon>BazarHardam.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\BazarHardam.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

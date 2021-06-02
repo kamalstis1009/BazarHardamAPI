@@ -251,5 +251,18 @@ namespace BazarHardamAPI.Controllers
             return NotFound();
         }
 
+        //[Authorize]
+        [Route("Api/Product/GetAllProductsWithUnit")]
+        [HttpGet]
+        public async Task<IHttpActionResult> GetAllProductsWithUnit()
+        {
+            var response = await _service.GetAllProductsWithUnit();
+            if (response != null)
+            {
+                return Ok(response);
+            }
+            return NotFound();
+        }
+
     }
 }

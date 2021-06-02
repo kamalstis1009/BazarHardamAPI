@@ -14,10 +14,10 @@ namespace BazarHardamAPI.Repositories
     
     public partial class SSL_InvStore
     {
-        public int StoreId { get; set; }
-        public string StoreName { get; set; }
-        public Nullable<System.Guid> CreateUser { get; set; }
-        public Nullable<System.DateTime> CreateDate { get; set; }
+        public long Id { get; set; }
+        public string Name { get; set; }
+        public System.Guid CreateUser { get; set; }
+        public System.DateTime CreateDate { get; set; }
         public Nullable<System.Guid> EditUser { get; set; }
         public Nullable<System.DateTime> EditDate { get; set; }
         public string OCode { get; set; }

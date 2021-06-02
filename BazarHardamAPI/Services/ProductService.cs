@@ -76,7 +76,7 @@ namespace BazarHardamAPI.Services
                           }).FirstOrDefaultAsync();*/
             return null;
         }
-
+        
         //======================================================| UPDATE
         public async Task<int> UpdateProductById(long id, SSL_Product model)
         {
@@ -173,10 +173,34 @@ namespace BazarHardamAPI.Services
             return null;
         }
 
-        //======================================================| ProductCategory
+        //======================================================| ProductUnit
         public async Task<List<SSL_ProductUnit>> GetAllProductUnit()
         {
             return await _context.SSL_ProductUnit.ToListAsync();
+        }
+
+        public async Task<List<ProductWithUnit>> GetAllProductsWithUnit()
+        {
+            return await (from A in _context.SSL_Product
+                          join B in _context.SSL_ProductUnit on A.ProductUnitId equals B.Id
+                          select new ProductWithUnit
+                          {
+                              Id = A.Id,
+                              CategoryId = A.CategoryId,
+                              BrandId = A.BrandId,
+                              Name = A.Name +" - "+ B.Name,
+                              Description = A.Description,
+                              ProductUnitId = A.ProductUnitId,
+                              SaleUnitPrice = A.SaleUnitPrice,
+                              ImageName = A.ImageName,
+                              ImagePath = A.ImagePath,
+                              Status = A.Status,
+                              CreateUser = A.CreateUser,
+                              CreateDate = A.CreateDate,
+                              EditUser = A.EditUser,
+                              EditDate = A.EditDate,
+                              OCode = A.OCode
+                          }).ToListAsync();
         }
     }
 }

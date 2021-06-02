@@ -37,5 +37,6 @@ namespace BazarHardamAPI.Services
         Task<List<SSL_Product>> GetAllProductByBrandId(long brandId);
 
         Task<List<SSL_ProductUnit>> GetAllProductUnit();
+        Task<List<ProductWithUnit>> GetAllProductsWithUnit();
     }
 }

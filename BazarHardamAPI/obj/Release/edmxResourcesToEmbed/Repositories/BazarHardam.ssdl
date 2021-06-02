@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BazarHardamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="SSL_Address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CareOf" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="25" />
+    <Property Name="Division" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="District" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Area" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_Authenticate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SSL_Brand">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_BrandCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_CampaignBrand">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BrandId" Type="bigint" Nullable="false" />
+    <Property Name="CampBrandCategoryId" Type="bigint" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_CampaignBrandCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_CampaignProduct">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+    <Property Name="CampProductCategoryId" Type="bigint" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_CampaignProductCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_CampaignSlider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_Comment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+    <Property Name="Comments" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_Coupon">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Discount" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_DeliveryHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DeliveryCharge" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Vat" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalAmount" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VendorId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OrderNo" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="StartLocation" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="StartAddress" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="EndLocation" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="EndAddress" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="DeliveryManId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_DeliveryMan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_DeliveryType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Cost" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_Description">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LabelName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SSL_Inventory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChallanDate" Type="datetime" Nullable="false" />
+    <Property Name="ChallanRef" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="InvStoreId" Type="bigint" Nullable="false" />
+    <Property Name="VendorId" Type="bigint" Nullable="false" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="250" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+    <Property Name="Quantity" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CostUnitPrice" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalAmount" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_InvStockSummary">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvStoreId" Type="bigint" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+    <Property Name="Barcode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReceivedQty" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DeliveryQty" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="StoreTransferQty" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SupplierReturnQty" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DamageQty" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SoldQty" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="SalesReturnQty" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="BalanceQty" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_InvStore">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_Like">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_OnlineBanking">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsMobile" Type="bit" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="AccountNumber" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PaymentTypeId" Type="bigint" Nullable="false" />
+    <Property Name="CouponId" Type="bigint" />
+    <Property Name="RefId" Type="nvarchar" MaxLength="25" />
+    <Property Name="Status" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="IsPaid" Type="bit" Nullable="false" />
+    <Property Name="TotalAmount" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AddressId" Type="bigint" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_OrderDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="bigint" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+    <Property Name="Qty" Type="int" Nullable="false" />
+    <Property Name="UnitPrice" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalAmount" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SSL_OrderStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="bigint" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Comments" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_PaymentHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="bigint" Nullable="false" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="PaymentTypeId" Type="bigint" Nullable="false" />
+    <Property Name="CouponId" Type="bigint" />
+    <Property Name="RefId" Type="nvarchar" MaxLength="25" />
+    <Property Name="TotalAmount" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AddressId" Type="bigint" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_PaymentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="bigint" Nullable="false" />
+    <Property Name="BrandId" Type="bigint" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ProductUnitId" Type="bigint" Nullable="false" />
+    <Property Name="SaleUnitPrice" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_ProductCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="IsEnabled" Type="bit" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_ProductUnit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_Reference">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RefId" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Discount" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_ShoppingCart">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+    <Property Name="Qty" Type="int" Nullable="false" />
+    <Property Name="UnitPrice" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TotalAmount" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_Specification">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LabelName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Specification" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="ProductId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SSL_User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="25" />
+    <Property Name="BirthDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="Division" Type="nvarchar" MaxLength="50" />
+    <Property Name="District" Type="nvarchar" MaxLength="50" />
+    <Property Name="PoliceStation" Type="nvarchar" MaxLength="250" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" />
+    <Property Name="Token" Type="nvarchar" MaxLength="500" />
+    <Property Name="RefId" Type="nvarchar" MaxLength="25" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_UserBalance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderId" Type="bigint" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Balance" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="SSL_Vendor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="Division" Type="nvarchar" MaxLength="50" />
+    <Property Name="District" Type="nvarchar" MaxLength="50" />
+    <Property Name="PoliceStation" Type="nvarchar" MaxLength="250" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImageName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="PersonImageName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PersonImagePath" Type="nvarchar" MaxLength="250" />
+    <Property Name="Status" Type="nvarchar" MaxLength="25" />
+    <Property Name="Token" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="EditUser" Type="uniqueidentifier" />
+    <Property Name="EditDate" Type="datetime" />
+    <Property Name="OCode" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityContainer Name="BazarHardamModelStoreContainer">
+    <EntitySet Name="SSL_Address" EntityType="Self.SSL_Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_Authenticate" EntityType="Self.SSL_Authenticate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_Brand" EntityType="Self.SSL_Brand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_BrandCategory" EntityType="Self.SSL_BrandCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_CampaignBrand" EntityType="Self.SSL_CampaignBrand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_CampaignBrandCategory" EntityType="Self.SSL_CampaignBrandCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_CampaignProduct" EntityType="Self.SSL_CampaignProduct" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_CampaignProductCategory" EntityType="Self.SSL_CampaignProductCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_CampaignSlider" EntityType="Self.SSL_CampaignSlider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_Comment" EntityType="Self.SSL_Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_Coupon" EntityType="Self.SSL_Coupon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_DeliveryHistory" EntityType="Self.SSL_DeliveryHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_DeliveryMan" EntityType="Self.SSL_DeliveryMan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_DeliveryType" EntityType="Self.SSL_DeliveryType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_Description" EntityType="Self.SSL_Description" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_Inventory" EntityType="Self.SSL_Inventory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_InvStockSummary" EntityType="Self.SSL_InvStockSummary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_InvStore" EntityType="Self.SSL_InvStore" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_Like" EntityType="Self.SSL_Like" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_OnlineBanking" EntityType="Self.SSL_OnlineBanking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_Order" EntityType="Self.SSL_Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_OrderDetail" EntityType="Self.SSL_OrderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_OrderStatus" EntityType="Self.SSL_OrderStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_PaymentHistory" EntityType="Self.SSL_PaymentHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_PaymentType" EntityType="Self.SSL_PaymentType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_Product" EntityType="Self.SSL_Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_ProductCategory" EntityType="Self.SSL_ProductCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_ProductUnit" EntityType="Self.SSL_ProductUnit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_Reference" EntityType="Self.SSL_Reference" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_ShoppingCart" EntityType="Self.SSL_ShoppingCart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_Specification" EntityType="Self.SSL_Specification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_User" EntityType="Self.SSL_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_UserBalance" EntityType="Self.SSL_UserBalance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SSL_Vendor" EntityType="Self.SSL_Vendor" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

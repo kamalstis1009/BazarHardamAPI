@@ -15,17 +15,17 @@ namespace BazarHardamAPI.Repositories
     public partial class SSL_InvStockSummary
     {
         public long Id { get; set; }
-        public long StoreId { get; set; }
+        public long InvStoreId { get; set; }
         public long ProductId { get; set; }
         public string Barcode { get; set; }
-        public Nullable<decimal> ReceivedQty { get; set; }
-        public Nullable<decimal> DeliveryQty { get; set; }
-        public Nullable<decimal> StoreTransferQty { get; set; }
-        public Nullable<decimal> SupplierReturnQty { get; set; }
-        public Nullable<decimal> DamageQty { get; set; }
-        public Nullable<decimal> SoldQty { get; set; }
-        public Nullable<decimal> SalesReturnQty { get; set; }
-        public Nullable<decimal> BalanceQty { get; set; }
+        public decimal ReceivedQty { get; set; }
+        public decimal DeliveryQty { get; set; }
+        public decimal StoreTransferQty { get; set; }
+        public decimal SupplierReturnQty { get; set; }
+        public decimal DamageQty { get; set; }
+        public decimal SoldQty { get; set; }
+        public decimal SalesReturnQty { get; set; }
+        public decimal BalanceQty { get; set; }
         public string OCode { get; set; }
     }
 }

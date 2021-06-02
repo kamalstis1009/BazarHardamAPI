@@ -223,11 +223,12 @@
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ChallanDate" Type="datetime" Nullable="false" />
           <Property Name="ChallanRef" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="InvStoreId" Type="bigint" Nullable="false" />
           <Property Name="VendorId" Type="bigint" Nullable="false" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="250" />
           <Property Name="ProductId" Type="bigint" Nullable="false" />
-          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="numeric" Precision="18" Scale="2" Nullable="false" />
           <Property Name="CostUnitPrice" Type="numeric" Precision="18" Scale="2" Nullable="false" />
-          <Property Name="SaleUnitPrice" Type="numeric" Precision="18" Scale="2" Nullable="false" />
           <Property Name="TotalAmount" Type="numeric" Precision="18" Scale="2" Nullable="false" />
           <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
           <Property Name="CreateDate" Type="datetime" Nullable="false" />
@@ -240,27 +241,27 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="StoreId" Type="bigint" Nullable="false" />
+          <Property Name="InvStoreId" Type="bigint" Nullable="false" />
           <Property Name="ProductId" Type="bigint" Nullable="false" />
           <Property Name="Barcode" Type="nvarchar" MaxLength="50" />
-          <Property Name="ReceivedQty" Type="numeric" Precision="18" Scale="2" />
-          <Property Name="DeliveryQty" Type="numeric" Precision="18" Scale="2" />
-          <Property Name="StoreTransferQty" Type="numeric" Precision="18" Scale="2" />
-          <Property Name="SupplierReturnQty" Type="numeric" Precision="18" Scale="2" />
-          <Property Name="DamageQty" Type="numeric" Precision="18" Scale="2" />
-          <Property Name="SoldQty" Type="numeric" Precision="18" Scale="2" />
-          <Property Name="SalesReturnQty" Type="numeric" Precision="18" Scale="2" />
-          <Property Name="BalanceQty" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="ReceivedQty" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DeliveryQty" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="StoreTransferQty" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SupplierReturnQty" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DamageQty" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SoldQty" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SalesReturnQty" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="BalanceQty" Type="numeric" Precision="18" Scale="2" Nullable="false" />
           <Property Name="OCode" Type="nvarchar" MaxLength="25" />
         </EntityType>
         <EntityType Name="SSL_InvStore">
           <Key>
-            <PropertyRef Name="StoreId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="StoreId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="StoreName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="CreateUser" Type="uniqueidentifier" />
-          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreateUser" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
           <Property Name="EditUser" Type="uniqueidentifier" />
           <Property Name="EditDate" Type="datetime" />
           <Property Name="OCode" Type="nvarchar" MaxLength="25" />
@@ -812,11 +813,12 @@
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ChallanDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ChallanRef" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="InvStoreId" Type="Int64" Nullable="false" />
           <Property Name="VendorId" Type="Int64" Nullable="false" />
+          <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="ProductId" Type="Int64" Nullable="false" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="CostUnitPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="SaleUnitPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="TotalAmount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="CreateUser" Type="Guid" Nullable="false" />
           <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
@@ -829,27 +831,27 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="StoreId" Type="Int64" Nullable="false" />
+          <Property Name="InvStoreId" Type="Int64" Nullable="false" />
           <Property Name="ProductId" Type="Int64" Nullable="false" />
           <Property Name="Barcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ReceivedQty" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="DeliveryQty" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="StoreTransferQty" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="SupplierReturnQty" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="DamageQty" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="SoldQty" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="SalesReturnQty" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="BalanceQty" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ReceivedQty" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="DeliveryQty" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="StoreTransferQty" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SupplierReturnQty" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="DamageQty" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SoldQty" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SalesReturnQty" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="BalanceQty" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="OCode" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="SSL_InvStore">
           <Key>
-            <PropertyRef Name="StoreId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="StoreId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="StoreName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CreateUser" Type="Guid" />
-          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateUser" Type="Guid" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="EditUser" Type="Guid" />
           <Property Name="EditDate" Type="DateTime" Precision="3" />
           <Property Name="OCode" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
@@ -1107,7 +1109,7 @@
           <Property Name="EditDate" Type="DateTime" Precision="3" />
           <Property Name="OCode" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
         </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -1348,11 +1350,12 @@
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
                 <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
-                <ScalarProperty Name="SaleUnitPrice" ColumnName="SaleUnitPrice" />
                 <ScalarProperty Name="CostUnitPrice" ColumnName="CostUnitPrice" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
                 <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+                <ScalarProperty Name="InvStoreId" ColumnName="InvStoreId" />
                 <ScalarProperty Name="ChallanRef" ColumnName="ChallanRef" />
                 <ScalarProperty Name="ChallanDate" ColumnName="ChallanDate" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -1373,7 +1376,7 @@
                 <ScalarProperty Name="ReceivedQty" ColumnName="ReceivedQty" />
                 <ScalarProperty Name="Barcode" ColumnName="Barcode" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="InvStoreId" ColumnName="InvStoreId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1386,8 +1389,8 @@
                 <ScalarProperty Name="EditUser" ColumnName="EditUser" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
-                <ScalarProperty Name="StoreName" ColumnName="StoreName" />
-                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

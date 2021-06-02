@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Local Server\SSL_BazarHardam</_PublishTargetUrl>
+    <History>True|2021-06-02T11:35:30.7643881Z;True|2021-06-02T17:28:59.4716705+06:00;True|2021-06-02T17:27:28.4248137+06:00;True|2021-06-02T17:25:02.0986211+06:00;True|2021-06-02T17:16:29.4975322+06:00;True|2021-06-02T16:27:07.0442153+06:00;True|2021-06-02T16:24:24.0142688+06:00;True|2021-06-02T16:19:43.7014289+06:00;True|2021-06-02T16:07:15.7969330+06:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/BazarHardamAPI.dll">
+      <publishTime>06/02/2021 17:35:30</publishTime>
+    </File>
+    <File Include="bin/BazarHardamAPI.pdb">
+      <publishTime>06/02/2021 17:35:30</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>04/16/2020 20:38:42</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>04/16/2020 20:38:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>09/05/2018 16:10:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/25/2012 11:48:56</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>08/03/2014 20:33:56</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/27/2016 21:50:24</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>11/28/2018 13:00:36</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>09/18/2018 19:38:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>11/28/2018 12:58:44</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>11/28/2018 13:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Cors.dll">
+      <publishTime>11/28/2018 13:01:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>11/28/2018 13:01:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>11/28/2018 13:02:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>11/28/2018 12:59:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>11/28/2018 13:00:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>11/28/2018 13:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>11/28/2018 13:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>11/28/2018 13:04:24</publishTime>
+    </File>
+    <File Include="bin/Unity.Abstractions.dll">
+      <publishTime>06/20/2019 20:37:54</publishTime>
+    </File>
+    <File Include="bin/Unity.Abstractions.pdb">
+      <publishTime>06/20/2019 20:37:54</publishTime>
+    </File>
+    <File Include="bin/Unity.Container.dll">
+      <publishTime>06/20/2019 20:38:00</publishTime>
+    </File>
+    <File Include="bin/Unity.Container.pdb">
+      <publishTime>06/20/2019 20:38:00</publishTime>
+    </File>
+    <File Include="bin/Unity.Mvc5.dll">
+      <publishTime>07/05/2019 11:26:34</publishTime>
+    </File>
+    <File Include="bin/Unity.WebApi.dll">
+      <publishTime>07/05/2019 11:38:06</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>06/02/2021 10:51:29</publishTime>
+    </File>
+    <File Include="Repositories/BazarHardam.edmx.diagram">
+      <publishTime>06/02/2021 16:18:51</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20200831_172210.png">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20200831_172211.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210415_144309.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210415_144310.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210415_144312.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210415_144313.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210415_144314.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210415_144315.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210415_144316.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210604_144312.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210604_144313.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210604_144314.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210604_154312.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210604_154313.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210604_154314.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210604_154315.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210604_154316.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210604_154317.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210604_154318.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210605_144311.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210605_144312.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210605_144313.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210605_144314.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210605_144315.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210605_144316.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210605_144317.jpg">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210605_144317.png">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210605_144318.png">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210605_144319.png">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210605_144320.png">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210605_144321.png">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210605_144322.png">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/IMG_20210605_144323.png">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Uploads/SQL_Scripts.sql">
+      <publishTime>06/02/2021 10:33:04</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/02/2021 16:07:15</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

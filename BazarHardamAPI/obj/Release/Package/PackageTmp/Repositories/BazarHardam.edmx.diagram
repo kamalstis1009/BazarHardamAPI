@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="93177a16e29f4314bbd2db2f0d4c66a0" Name="Diagram1">
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_Address" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_Authenticate" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_Brand" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_BrandCategory" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_CampaignBrand" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_CampaignBrandCategory" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_CampaignProduct" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_CampaignProductCategory" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_CampaignSlider" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_Comment" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_Coupon" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_DeliveryHistory" Width="1.5" PointX="4.75" PointY="8.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_DeliveryMan" Width="1.5" PointX="6.75" PointY="8.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_DeliveryType" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_Description" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_Inventory" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_InvStockSummary" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_InvStore" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_Like" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_OnlineBanking" Width="1.5" PointX="12.75" PointY="4.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_Order" Width="1.5" PointX="12.75" PointY="8.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_OrderDetail" Width="1.5" PointX="6.75" PointY="13.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_OrderStatus" Width="1.5" PointX="8.75" PointY="13.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_PaymentHistory" Width="1.5" PointX="10.75" PointY="13.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_PaymentType" Width="1.5" PointX="12.75" PointY="13.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_Product" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_ProductCategory" Width="1.5" PointX="2.75" PointY="14.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_ProductUnit" Width="1.5" PointX="14.75" PointY="5.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_Reference" Width="1.5" PointX="14.75" PointY="9.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_ShoppingCart" Width="1.5" PointX="14.75" PointY="13.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_Specification" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_User" Width="1.5" PointX="16.75" PointY="3.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_UserBalance" Width="1.5" PointX="16.75" PointY="9.75" />
+        <EntityTypeShape EntityType="BazarHardamModel.SSL_Vendor" Width="1.5" PointX="16.75" PointY="13.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
