@@ -23,19 +23,21 @@ namespace BazarHardamAPI.Services
         }
 
         //======================================================| ADD
-        public async Task<int> AddAuthenticate(SSL_Authenticate model)
+        public async Task<SSL_Authenticate> AddAuthenticate(SSL_Authenticate model)
         {
             var item = await _context.SSL_Authenticate.FirstOrDefaultAsync(index => index.Username == model.Username);
             if (item == null)
             {
                 model.Id = Guid.NewGuid();
                 _context.SSL_Authenticate.Add(model);
-                return await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
+                return model;
             }
             item.Password = model.Password;
             item.Username = model.Username;
             item.Role = model.Role;
-            return await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
+            return item;
         }
 
         //======================================================| PUT/UPDATE

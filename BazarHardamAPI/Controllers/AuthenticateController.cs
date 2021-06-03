@@ -47,12 +47,7 @@ namespace BazarHardamAPI.Controllers
         public async Task<IHttpActionResult> AddAuthenticate([FromBody] SSL_Authenticate model)
         {
             var response = await _service.AddAuthenticate(model);
-            if (response > 0)
-            {
-                //return Ok(response);
-                return CreatedAtRoute(nameof(GetAuthById), new { id = model.Id }, model); //https://www.jasoncavett.com/blog/converting-to-attribute-routing-in-webapi-applications/
-            }
-            return NotFound();
+            return Ok(response); ////return CreatedAtRoute(nameof(GetAuthById), new { id = model.Id }, model); //https://www.jasoncavett.com/blog/converting-to-attribute-routing-in-webapi-applications/
         }
 
         //======================================================| PUT/UPDATE
