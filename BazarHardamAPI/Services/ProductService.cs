@@ -66,15 +66,14 @@ namespace BazarHardamAPI.Services
 
         public async Task<ProductDetail> GetProductDetailsById(long id)
         {
-            /*return await (from A in _context.SSL_Product where A.Id == id
+            return await (from A in _context.SSL_Product where A.Id == id
                           join B in _context.SSL_Brand on A.BrandId equals B.Id
+                          join C in _context.SSL_InvStockSummary on A.Id equals C.ProductId
                           select new ProductDetail
                           {
                               Brand = B,
-                              Description = list,
-                              Specification = list2
-                          }).FirstOrDefaultAsync();*/
-            return null;
+                              StockSummary = C
+                          }).FirstOrDefaultAsync();
         }
         
         //======================================================| UPDATE
