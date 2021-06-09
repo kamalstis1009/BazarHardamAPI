@@ -87,19 +87,24 @@ namespace BazarHardamAPI.Services
 
         public async Task<List<Inventory>> GetAllInventoryGroupBy()
         {
-            var list = await _context.SSL_Inventory.ToListAsync().ConfigureAwait(false); //.Where(index => index.OCode == oCode)
-            return list.GroupBy(index => new { index.InvStoreId, index.ProductId }).Select(item => new Inventory {
-                ChallanDate = item.First().ChallanDate,
-                ChallanRef = item.First().ChallanRef,
-                InvStoreId = item.First().InvStoreId,
-                VendorId = item.First().VendorId,
-                Remarks = item.First().Remarks,
-                ProductId = item.First().ProductId,
-                ProductName = _context.SSL_Product.FirstOrDefault(q => q.Id == item.Key.ProductId).Name,
-                Quantity = item.Sum(q => q.Quantity), 
-                CostUnitPrice = item.Sum(q => q.CostUnitPrice), 
-                TotalAmount = item.Sum(q => q.TotalAmount) 
-            }).ToList();
+            //var list = await _context.SSL_Inventory.ToListAsync().ConfigureAwait(false); //.Where(index => index.OCode == oCode)
+            //return list.GroupBy(index => new { index.ChallanRef }).Select(item => new Inventory {
+            //    ChallanDate = item.Max().ChallanDate,
+            //    ChallanRef = item.Max().ChallanRef,
+            //    InvStoreId = item.Max().InvStoreId,
+            //    VendorId = item.Max().VendorId,
+            //    Remarks = item.Max().Remarks,
+            //    //ProductId = item.First().ProductId,
+            //  //  ProductName = _context.SSL_Product.FirstOrDefault(q => q.Id == item.Key.ProductId).Name,
+            //    Quantity = item.Sum(q => q.Quantity), 
+            //    CostUnitPrice = item.Sum(q => q.CostUnitPrice), 
+            //    TotalAmount = item.Sum(q => q.TotalAmount) 
+            //}).ToList();
+
+            var result = _context.Database.SqlQuery<Inventory>("ChallanSummary_Lists").ToList();
+
+            return result;
+
         }
 
         public async Task<List<SSL_InvStore>> GetAllInvStores()

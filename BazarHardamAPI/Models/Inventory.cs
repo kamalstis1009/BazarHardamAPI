@@ -18,6 +18,7 @@ namespace BazarHardamAPI.Models
         public decimal Quantity { get; set; }
         public decimal CostUnitPrice { get; set; }
         public decimal TotalAmount { get; set; }
+        public string VendorName { get; set; }
 
     }
 
