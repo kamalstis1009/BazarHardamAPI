@@ -67,11 +67,12 @@ namespace BazarHardamAPI.Services
         public async Task<ProductDetail> GetProductDetailsById(long id)
         {
             return await (from A in _context.SSL_Product where A.Id == id
-                          join B in _context.SSL_Brand on A.BrandId equals B.Id
+                          //join B in _context.SSL_Brand on A.BrandId equals B.Id
                           join C in _context.SSL_InvStockSummary on A.Id equals C.ProductId
+                          let brand = (from e in _context.SSL_Brand where e.Id == A.BrandId select e).FirstOrDefault()
                           select new ProductDetail
                           {
-                              Brand = B,
+                              Brand = brand,
                               StockSummary = C
                           }).FirstOrDefaultAsync();
         }
@@ -168,8 +169,7 @@ namespace BazarHardamAPI.Services
 
         public async Task<List<SSL_Product>> GetAllProductByBrandId(long brandId)
         {
-            //return await _context.SSL_Product.Where(index => index.BrandId == brandId).ToListAsync();
-            return null;
+            return await _context.SSL_Product.Where(index => index.BrandId == brandId).ToListAsync();
         }
 
         //======================================================| ProductUnit
