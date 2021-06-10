@@ -18,7 +18,22 @@ namespace BazarHardamAPI.Services
         public async Task<int> AddOrder(SSL_Order model)
         {
             _context.SSL_Order.Add(model);
-            return await _context.SaveChangesAsync();
+            var response = await _context.SaveChangesAsync();
+            if (response > 0)
+            {
+                var item = new SSL_OrderStatus
+                {
+                    OrderId = model.Id,
+                    Status = "Processing",
+                    Comments = "Your product is now in the processing section.",
+                    CreateUser = model.CreateUser,
+                    CreateDate = model.CreateDate,
+                    OCode = model.OCode
+                };
+                _context.SSL_OrderStatus.Add(item);
+                return await _context.SaveChangesAsync();
+            }
+            return 0;
         }
 
         public async Task<int> AddAllOrderProduct(List<SSL_OrderDetail> products)
@@ -53,10 +68,10 @@ namespace BazarHardamAPI.Services
 
         public async Task<OrderDetailModel> GetAllOrderDetailsByOrderId(long orderId, long addressId, long paymentTypeId, string refId)
         {
-            /*var list = await (from O in _context.SSL_OrderDetail.Where(index => index.OrderId == orderId)
+            var list = await (from O in _context.SSL_OrderDetail.Where(index => index.OrderId == orderId)
                               join P in _context.SSL_Product on O.ProductId equals P.Id
-                              select new { O, P }).ToListAsync();
-            list.ForEach(index => { index.P.Quantity = index.O.Qty; index.P.TotalAmount = index.O.TotalAmount; });
+                              select new { O, P = new ProductModel { Id=P.Id, CategoryId=P.CategoryId, BrandId=P.BrandId, Name=P.Name, Description=P.Description, ProductUnitId=P.ProductUnitId, SaleUnitPrice=P.SaleUnitPrice, ImageName=P.ImageName, ImagePath=P.ImagePath, Status=P.Status, CreateUser=P.CreateUser, CreateDate=P.CreateDate, OCode = P.OCode, Quantity=O.Qty, TotalAmount=O.TotalAmount } }).ToListAsync();
+            //list.ForEach(index => { index.P.Quantity = index.O.Qty; index.P.TotalAmount = index.O.TotalAmount; });
             if (list != null)
             {
                 var item = _context.SSL_PaymentType.FirstOrDefault(index => index.Id == paymentTypeId);
@@ -69,7 +84,7 @@ namespace BazarHardamAPI.Services
                     PaymentType = item?.Name,
                     Discount = model != null ? model.Discount : 0
                 };
-            }*/
+            }
             return null;
             
         }

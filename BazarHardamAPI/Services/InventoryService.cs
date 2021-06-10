@@ -87,7 +87,7 @@ namespace BazarHardamAPI.Services
 
         public async Task<List<Inventory>> GetAllInventoryGroupBy()
         {
-            var list = await _context.SSL_Inventory.ToListAsync().ConfigureAwait(false); //.Where(index => index.OCode == oCode)
+            /*var list = await _context.SSL_Inventory.ToListAsync().ConfigureAwait(false); //.Where(index => index.OCode == oCode)
             return list.GroupBy(index => new { index.InvStoreId, index.ProductId }).Select(item => new Inventory {
                 ChallanDate = item.First().ChallanDate,
                 ChallanRef = item.First().ChallanRef,
@@ -99,7 +99,8 @@ namespace BazarHardamAPI.Services
                 Quantity = item.Sum(q => q.Quantity), 
                 CostUnitPrice = item.Sum(q => q.CostUnitPrice), 
                 TotalAmount = item.Sum(q => q.TotalAmount) 
-            }).ToList();
+            }).ToList();*/
+            return await _context.Database.SqlQuery<Inventory>("ChallanSummary_Lists").ToListAsync();
         }
 
         public async Task<List<SSL_InvStore>> GetAllInvStores()
