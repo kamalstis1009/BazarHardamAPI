@@ -200,6 +200,7 @@
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\OrderDetailModel.cs" />
     <Compile Include="Models\ProductDetail.cs" />
+    <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\ProductWithUnit.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

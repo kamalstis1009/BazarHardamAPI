@@ -9,7 +9,6 @@ namespace BazarHardamAPI.Models
     public class ProductDetail
     {
         public SSL_Brand Brand { get; set; }
-        public List<SSL_Description> Description { get; set; }
-        public List<SSL_Specification> Specification { get; set; }
+        public SSL_InvStockSummary StockSummary { get; set; }
     }
 }

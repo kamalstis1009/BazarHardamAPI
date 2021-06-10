@@ -8,7 +8,7 @@ namespace BazarHardamAPI.Models
 {
     public class OrderDetailModel
     {
-        public List<SSL_Product> Products { get; set; }
+        public List<ProductModel> Products { get; set; }
         public SSL_Address Address { get; set; }
         public string PaymentType { get; set; }
         public decimal Discount { get; set; }

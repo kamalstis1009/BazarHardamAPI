@@ -5,14 +5,14 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Local Server\SSL_BazarHardam</_PublishTargetUrl>
-    <History>True|2021-06-03T09:23:00.0203702Z;True|2021-06-03T15:20:40.1739274+06:00;False|2021-06-03T15:18:16.1853245+06:00;False|2021-06-03T15:17:49.0397150+06:00;False|2021-06-03T15:17:38.1615083+06:00;True|2021-06-02T17:35:30.7643881+06:00;True|2021-06-02T17:28:59.4716705+06:00;True|2021-06-02T17:27:28.4248137+06:00;True|2021-06-02T17:25:02.0986211+06:00;True|2021-06-02T17:16:29.4975322+06:00;True|2021-06-02T16:27:07.0442153+06:00;True|2021-06-02T16:24:24.0142688+06:00;True|2021-06-02T16:19:43.7014289+06:00;True|2021-06-02T16:07:15.7969330+06:00;</History>
+    <History>True|2021-06-09T10:25:58.5074181Z;True|2021-06-09T16:08:21.1137748+06:00;True|2021-06-09T15:38:19.9652208+06:00;True|2021-06-09T15:05:21.7094570+06:00;True|2021-06-09T14:20:42.4922956+06:00;True|2021-06-09T14:15:00.3123214+06:00;True|2021-06-09T14:10:45.3524609+06:00;True|2021-06-03T15:23:00.0203702+06:00;True|2021-06-03T15:20:40.1739274+06:00;False|2021-06-03T15:18:16.1853245+06:00;False|2021-06-03T15:17:49.0397150+06:00;False|2021-06-03T15:17:38.1615083+06:00;True|2021-06-02T17:35:30.7643881+06:00;True|2021-06-02T17:28:59.4716705+06:00;True|2021-06-02T17:27:28.4248137+06:00;True|2021-06-02T17:25:02.0986211+06:00;True|2021-06-02T17:16:29.4975322+06:00;True|2021-06-02T16:27:07.0442153+06:00;True|2021-06-02T16:24:24.0142688+06:00;True|2021-06-02T16:19:43.7014289+06:00;True|2021-06-02T16:07:15.7969330+06:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/BazarHardamAPI.dll">
-      <publishTime>06/03/2021 15:22:59</publishTime>
+      <publishTime>06/09/2021 16:25:57</publishTime>
     </File>
     <File Include="bin/BazarHardamAPI.pdb">
-      <publishTime>06/03/2021 15:22:59</publishTime>
+      <publishTime>06/09/2021 16:25:57</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>04/16/2020 20:38:42</publishTime>
@@ -234,7 +234,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>06/02/2021 10:33:04</publishTime>
     </File>
     <File Include="Uploads/IMG_20210605_144314.jpg">
-      <publishTime>06/02/2021 10:33:04</publishTime>
+      <publishTime>06/09/2021 14:13:13</publishTime>
     </File>
     <File Include="Uploads/IMG_20210605_144315.jpg">
       <publishTime>06/02/2021 10:33:04</publishTime>
