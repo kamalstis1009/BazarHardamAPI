@@ -201,5 +201,39 @@ namespace BazarHardamAPI.Services
                               OCode = A.OCode
                           }).ToListAsync();
         }
+
+        //======================================================| ShoppingCart
+        public async Task<SSL_ShoppingCart> AddShoppingCart(SSL_ShoppingCart model)
+        {
+            _context.SSL_ShoppingCart.Add(model);
+            await _context.SaveChangesAsync();
+            return model;
+        }
+
+        public async Task<List<ProductModel>> GetAllShoppingCartByUserId(Guid userId)
+        {
+            return await (from S in _context.SSL_ShoppingCart.Where(index => index.CreateUser == userId)
+                              join P in _context.SSL_Product on S.ProductId equals P.Id
+                              select new ProductModel 
+                              {
+                                  Id = P.Id,
+                                  CategoryId = P.CategoryId,
+                                  BrandId = P.BrandId,
+                                  Name = P.Name,
+                                  Description = P.Description,
+                                  ProductUnitId = P.ProductUnitId,
+                                  SaleUnitPrice = P.SaleUnitPrice,
+                                  ImageName = P.ImageName,
+                                  ImagePath = P.ImagePath,
+                                  Status = P.Status,
+                                  CreateUser = P.CreateUser,
+                                  CreateDate = P.CreateDate,
+                                  OCode = P.OCode,
+                                  Quantity = S.Qty,
+                                  TotalAmount = S.TotalAmount
+                              }).ToListAsync();
+        }
+
+
     }
 }

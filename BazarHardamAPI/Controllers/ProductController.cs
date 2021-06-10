@@ -264,5 +264,26 @@ namespace BazarHardamAPI.Controllers
             return NotFound();
         }
 
+        //======================================================| ShoppingCart
+        [Route("Api/Product/AddShoppingCart")]
+        [HttpPost]
+        public async Task<IHttpActionResult> AddShoppingCart([FromBody] SSL_ShoppingCart item)
+        {
+            var response = await _service.AddShoppingCart(item);
+            return Ok(response);
+        }
+
+        [Route("Api/Product/GetAllShoppingCartByUserId")]
+        [HttpGet]
+        public async Task<IHttpActionResult> GetAllShoppingCartByUserId([FromUri] Guid userId)
+        {
+            var response = await _service.GetAllShoppingCartByUserId(userId);
+            if (response != null)
+            {
+                return Ok(response);
+            }
+            return NotFound();
+        }
+
     }
 }
