@@ -267,9 +267,9 @@ namespace BazarHardamAPI.Controllers
         //======================================================| ShoppingCart
         [Route("Api/Product/AddShoppingCart")]
         [HttpPost]
-        public async Task<IHttpActionResult> AddShoppingCart([FromBody] SSL_ShoppingCart item)
+        public async Task<IHttpActionResult> AddShoppingCart([FromUri] Guid userId, [FromBody] SSL_ShoppingCart item)
         {
-            var response = await _service.AddShoppingCart(item);
+            var response = await _service.AddShoppingCart(userId, item);
             return Ok(response);
         }
 
@@ -287,9 +287,9 @@ namespace BazarHardamAPI.Controllers
 
         [Route("Api/Product/DeleteShoppingCartById")]
         [HttpDelete]
-        public async Task<IHttpActionResult> DeleteShoppingCartById([FromUri] long id)
+        public async Task<IHttpActionResult> DeleteShoppingCartById([FromUri] long id, [FromUri] Guid userId)
         {
-            var response = await _service.DeleteShoppingCartById(id);
+            var response = await _service.DeleteShoppingCartById(id, userId);
             return Ok(response);
         }
 

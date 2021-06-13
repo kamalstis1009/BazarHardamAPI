@@ -39,8 +39,8 @@ namespace BazarHardamAPI.Services
         Task<List<SSL_ProductUnit>> GetAllProductUnit();
         Task<List<ProductWithUnit>> GetAllProductsWithUnit();
 
-        Task<SSL_ShoppingCart> AddShoppingCart(SSL_ShoppingCart model);
+        Task<SSL_ShoppingCart> AddShoppingCart(Guid userId, SSL_ShoppingCart model);
         Task<List<ProductModel>> GetAllShoppingCartByUserId(Guid userId);
-        Task<int> DeleteShoppingCartById(long id);
+        Task<int> DeleteShoppingCartById(long id, Guid userId);
     }
 }

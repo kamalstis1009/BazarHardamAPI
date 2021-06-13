@@ -69,10 +69,10 @@ namespace BazarHardamAPI.Services
             return await (from A in _context.SSL_Product where A.Id == id
                           //join B in _context.SSL_Brand on A.BrandId equals B.Id
                           join C in _context.SSL_InvStockSummary on A.Id equals C.ProductId
-                          let brand = (from e in _context.SSL_Brand where e.Id == A.BrandId select e).FirstOrDefault()
+                          //let brand = (from e in _context.SSL_Brand where e.Id == A.BrandId select e).FirstOrDefault()
                           select new ProductDetail
                           {
-                              Brand = brand,
+                              Brand = _context.SSL_Brand.FirstOrDefault(index => index.Id == A.BrandId),
                               StockSummary = C
                           }).FirstOrDefaultAsync();
         }
@@ -206,10 +206,26 @@ namespace BazarHardamAPI.Services
         }
 
         //======================================================| ShoppingCart
-        public async Task<SSL_ShoppingCart> AddShoppingCart(SSL_ShoppingCart model)
+        public async Task<SSL_ShoppingCart> AddShoppingCart(Guid userId, SSL_ShoppingCart model)
         {
-            _context.SSL_ShoppingCart.Add(model);
-            await _context.SaveChangesAsync();
+            var item = await _context.SSL_ShoppingCart.FirstOrDefaultAsync(index => index.Id == model.Id && index.CreateUser == userId);
+            if (item == null)
+            {
+                _context.SSL_ShoppingCart.Add(model);
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                item.Id = model.Id;
+                item.ProductId = model.ProductId;
+                item.Qty = model.Qty;
+                item.UnitPrice = model.UnitPrice;
+                item.TotalAmount = model.TotalAmount;
+                item.EditUser = model.EditUser;
+                item.EditDate = model.EditDate;
+                item.OCode = model.OCode;
+                await _context.SaveChangesAsync(); //Updated : //If any change the response 1, do not change response 0
+            }
             return model;
         }
 
@@ -238,9 +254,9 @@ namespace BazarHardamAPI.Services
                               }).ToListAsync();
         }
 
-        public async Task<int> DeleteShoppingCartById(long id)
+        public async Task<int> DeleteShoppingCartById(long id, Guid userId)
         {
-            var item = await _context.SSL_ShoppingCart.FirstOrDefaultAsync(index => index.Id == id);
+            var item = await _context.SSL_ShoppingCart.FirstOrDefaultAsync(index => index.Id == id && index.CreateUser == userId);
             if (item != null)
             {
                 _context.SSL_ShoppingCart.Remove(item);
