@@ -285,5 +285,15 @@ namespace BazarHardamAPI.Controllers
             return NotFound();
         }
 
+        [Route("Api/Product/DeleteShoppingCartById")]
+        [HttpDelete]
+        public async Task<IHttpActionResult> DeleteShoppingCartById([FromUri] long id)
+        {
+            var response = await _service.DeleteShoppingCartById(id);
+            return Ok(response);
+        }
+
+
+
     }
 }

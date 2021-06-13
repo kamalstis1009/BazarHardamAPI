@@ -238,6 +238,17 @@ namespace BazarHardamAPI.Services
                               }).ToListAsync();
         }
 
+        public async Task<int> DeleteShoppingCartById(long id)
+        {
+            var item = await _context.SSL_ShoppingCart.FirstOrDefaultAsync(index => index.Id == id);
+            if (item != null)
+            {
+                _context.SSL_ShoppingCart.Remove(item);
+                return await _context.SaveChangesAsync();
+            }
+            return 0;
+        }
+
 
     }
 }

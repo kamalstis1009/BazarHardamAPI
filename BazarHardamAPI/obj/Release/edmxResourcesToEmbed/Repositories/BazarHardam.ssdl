@@ -373,6 +373,7 @@
     <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CategoryId" Type="bigint" Nullable="false" />
     <Property Name="BrandId" Type="bigint" />
+    <Property Name="Code" Type="nvarchar" MaxLength="25" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
     <Property Name="Description" Type="nvarchar" MaxLength="1000" />
     <Property Name="ProductUnitId" Type="bigint" Nullable="false" />
