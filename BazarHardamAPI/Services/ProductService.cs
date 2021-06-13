@@ -208,7 +208,7 @@ namespace BazarHardamAPI.Services
         //======================================================| ShoppingCart
         public async Task<SSL_ShoppingCart> AddShoppingCart(Guid userId, SSL_ShoppingCart model)
         {
-            var item = await _context.SSL_ShoppingCart.FirstOrDefaultAsync(index => index.Id == model.Id && index.CreateUser == userId);
+            var item = await _context.SSL_ShoppingCart.FirstOrDefaultAsync(index => index.ProductId == model.ProductId && index.CreateUser == userId);
             if (item == null)
             {
                 _context.SSL_ShoppingCart.Add(model);
@@ -216,7 +216,6 @@ namespace BazarHardamAPI.Services
             }
             else
             {
-                item.Id = model.Id;
                 item.ProductId = model.ProductId;
                 item.Qty = model.Qty;
                 item.UnitPrice = model.UnitPrice;
@@ -254,9 +253,9 @@ namespace BazarHardamAPI.Services
                               }).ToListAsync();
         }
 
-        public async Task<int> DeleteShoppingCartById(long id, Guid userId)
+        public async Task<int> DeleteShoppingCartById(long productId, Guid userId)
         {
-            var item = await _context.SSL_ShoppingCart.FirstOrDefaultAsync(index => index.Id == id && index.CreateUser == userId);
+            var item = await _context.SSL_ShoppingCart.FirstOrDefaultAsync(index => index.ProductId == productId && index.CreateUser == userId);
             if (item != null)
             {
                 _context.SSL_ShoppingCart.Remove(item);

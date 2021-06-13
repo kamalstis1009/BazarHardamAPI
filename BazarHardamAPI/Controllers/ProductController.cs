@@ -287,9 +287,9 @@ namespace BazarHardamAPI.Controllers
 
         [Route("Api/Product/DeleteShoppingCartById")]
         [HttpDelete]
-        public async Task<IHttpActionResult> DeleteShoppingCartById([FromUri] long id, [FromUri] Guid userId)
+        public async Task<IHttpActionResult> DeleteShoppingCartById([FromUri] long productId, [FromUri] Guid userId)
         {
-            var response = await _service.DeleteShoppingCartById(id, userId);
+            var response = await _service.DeleteShoppingCartById(productId, userId);
             return Ok(response);
         }
 
