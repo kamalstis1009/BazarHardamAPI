@@ -378,6 +378,7 @@
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CategoryId" Type="bigint" Nullable="false" />
           <Property Name="BrandId" Type="bigint" />
+          <Property Name="Code" Type="nvarchar" MaxLength="25" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="1000" />
           <Property Name="ProductUnitId" Type="bigint" Nullable="false" />
@@ -968,6 +969,7 @@
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CategoryId" Type="Int64" Nullable="false" />
           <Property Name="BrandId" Type="Int64" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="ProductUnitId" Type="Int64" Nullable="false" />
@@ -1521,6 +1523,7 @@
                 <ScalarProperty Name="ProductUnitId" ColumnName="ProductUnitId" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
                 <ScalarProperty Name="BrandId" ColumnName="BrandId" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />

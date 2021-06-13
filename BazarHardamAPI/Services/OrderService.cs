@@ -70,7 +70,7 @@ namespace BazarHardamAPI.Services
         {
             var list = await (from O in _context.SSL_OrderDetail.Where(index => index.OrderId == orderId)
                               join P in _context.SSL_Product on O.ProductId equals P.Id
-                              select new { O, P = new ProductModel { Id=P.Id, CategoryId=P.CategoryId, BrandId=P.BrandId, Name=P.Name, Description=P.Description, ProductUnitId=P.ProductUnitId, SaleUnitPrice=P.SaleUnitPrice, ImageName=P.ImageName, ImagePath=P.ImagePath, Status=P.Status, CreateUser=P.CreateUser, CreateDate=P.CreateDate, OCode = P.OCode, Quantity=O.Qty, TotalAmount=O.TotalAmount } }).ToListAsync();
+                              select new { O, P = new ProductModel { Id=P.Id, CategoryId=P.CategoryId, BrandId=P.BrandId, Code = P.Code, Name =P.Name, Description=P.Description, ProductUnitId=P.ProductUnitId, SaleUnitPrice=P.SaleUnitPrice, ImageName=P.ImageName, ImagePath=P.ImagePath, Status=P.Status, CreateUser=P.CreateUser, CreateDate=P.CreateDate, OCode = P.OCode, Quantity=O.Qty, TotalAmount=O.TotalAmount } }).ToListAsync();
             //list.ForEach(index => { index.P.Quantity = index.O.Qty; index.P.TotalAmount = index.O.TotalAmount; });
             if (list != null)
             {

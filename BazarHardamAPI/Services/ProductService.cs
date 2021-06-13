@@ -84,6 +84,8 @@ namespace BazarHardamAPI.Services
             if (item != null)
             {
                 item.CategoryId = model.CategoryId;
+                item.BrandId = model.BrandId;
+                item.Code = model.Code;
                 item.Name = model.Name;
                 item.Description = model.Description;
                 item.SaleUnitPrice = model.SaleUnitPrice;
@@ -187,6 +189,7 @@ namespace BazarHardamAPI.Services
                               Id = A.Id,
                               CategoryId = A.CategoryId,
                               BrandId = A.BrandId,
+                              Code = A.Code,
                               Name = A.Name +" - "+ B.Name,
                               Description = A.Description,
                               ProductUnitId = A.ProductUnitId,
@@ -219,6 +222,7 @@ namespace BazarHardamAPI.Services
                                   Id = P.Id,
                                   CategoryId = P.CategoryId,
                                   BrandId = P.BrandId,
+                                  Code = P.Code,
                                   Name = P.Name,
                                   Description = P.Description,
                                   ProductUnitId = P.ProductUnitId,
